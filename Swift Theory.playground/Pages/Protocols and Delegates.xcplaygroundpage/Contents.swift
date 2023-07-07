@@ -3,7 +3,8 @@
 /*
  A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality.
  
- Class, Structure or Enumerations can adopt a protocol
+ Class, Structure or Enumerations can adopt a protocol.
+ And using the delegates design a class or struct or enumerations can to talk one another
  
  
  Creating a protocol:
@@ -78,5 +79,11 @@ let museum = FlyingMuseum()
 //museum.flyingDemo(flyingObject: myPenguin) // Penguin did not adopt the CanFly protocol
 museum.flyingDemo(flyingObject: myAirplane)
 
+// Delegate
 
-
+/*
+ 
+ Protocols are defined in the same file were we use that protocol
+ 
+ In Swift, a protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol can then be adopted by a class, structure, or enumeration to provide an actual implementation of those requirements1. A delegate is a design pattern that allows one object to send messages to another object when a specific event happens. It is a way of designing your code to use protocols where necessary.
+ */
