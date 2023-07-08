@@ -27,5 +27,6 @@
         <page name='Advanced SWIFT'/>
         <page name='Computed Property'/>
         <page name='TypeAlias'/>
+        <page name='Naming convetions'/>
     </pages>
 </playground>
