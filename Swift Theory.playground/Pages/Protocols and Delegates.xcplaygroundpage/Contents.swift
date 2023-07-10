@@ -7,24 +7,7 @@
  And using the delegates design a class or struct or enumerations can to talk one another
  
  
- Creating a protocol:
- 
- protocol FirstProtocol {
- func fly()
- }
- 
- Adopting protocol:
- 
- struct MyStructure: FirstProtocol, AnotherProtocol {
- // Struct definition goes here
- }
- 
- class MyClass: SuperClass, FirstProtocol, AnotherProtocol {
- // Class definition goes here
- }
- 
  */
-
 
 
 
@@ -78,6 +61,8 @@ let myAirplane = Airplane()
 let museum = FlyingMuseum()
 //museum.flyingDemo(flyingObject: myPenguin) // Penguin did not adopt the CanFly protocol
 museum.flyingDemo(flyingObject: myAirplane)
+
+
 
 // Delegate
 
@@ -133,3 +118,5 @@ myObject.doTask()
  */
 
 
+// For Further ref
+// https://jamesrochabrun.medium.com/implementing-delegates-in-swift-step-by-step-d3211cbac3ef

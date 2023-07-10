@@ -1,6 +1,6 @@
 /*
  
- 
+1.
  Constrains:- from safe area, view or container
  Alignment:- horizontally and vertically from the screen, or from the container.
  Container View :-
@@ -9,7 +9,7 @@
  
  
  
- 
+2.
  Segue:-
  To make a connection; Parent Vc - Ctrl click - drag and drop in - Next VC ; Select the segue connection - Attributes - Identifier - Name identifier
  Snippet:
@@ -27,7 +27,7 @@
  
  
  
- 
+3.
  Dark Mode:-
  When changing modes the colour and Background image can be customised
  Custom Colour : By default selecting a system colour or label colour will work just fine. But In order to use a custom colour that automatically respond to system modes, Color picker(Select a colour, drag and drop to square pallet.)
@@ -36,11 +36,13 @@
  
  
  
- 
+4.
  Vector Assets:-
  Vector images like .pdf files uses calculations to modify pixelations, So the image will stay sharp always can be used instead of .jpeg or .png's, Those pixelate while zooming. Change these aspects when using a vector image ; Resize : Preserve Vector Data, Scales: Single Scale (no more 1X, 2X or 3X needed), Use drag and drop to place a Vector image
  
  
+ 
+5.
  UITextFIeld:-
  By default there are parameters in the system to handle different modes by changing the text colour inside UITextField. Here in attributes handle all the keyboard props of the smartphone. Text Input Traits; Each first word to CAPITAL, Secured passkey doesn't show the words, return key to 'Go' or something
  
@@ -76,7 +78,9 @@ delegate is asking what to do when the return key is pressed
          return false
      }
  
-
+ 
+ 
+6.
  HTTP request:-
  
  func performRequest (urlString: String) {
@@ -94,8 +98,18 @@ delegate is asking what to do when the return key is pressed
      }
  
  
- JSON parsing:-
- Computed Properties
+ 
+ 
+7.
+ If your app has a long running task, such as making network call, run it on a global system queue, or on another background dispatch queue. Alternatively, use asynchronous versions of the call, if available.
+ 
+ DispatchQueue.main.async {
+     self.temperatureLabel.text = weather.temperatureString
+ }
+ 
+ 
+ 
+ 
  Extension:-
  Core Location:-
  
