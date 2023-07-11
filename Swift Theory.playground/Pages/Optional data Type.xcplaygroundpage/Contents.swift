@@ -14,14 +14,14 @@ print(myOptional!) // this is force un wrapping. After forcefully telling SWIFT 
 
 // Check for nil value: -
 
-myOptional = "nil"
+myOptional = nil
 if myOptional != nil {
     let text: String = myOptional! // Checking for nil value and force Unwrapping it.
     let text2: String = myOptional!
     print(text)
     print(text2)
 } else {
-    print("myOptional was found to be nil.")
+    print("found to be nil.")
     
 }
 
@@ -34,10 +34,8 @@ myOptional = "Dixon001"
 
 if let safeOptional = myOptional {
     let text: String = myOptional!
-    let text2: String = myOptional!
     // safeOptional is a temp var which holds the value of myOptional, only if it contains any value. if it's nil the else statement is printed out. this is called an "OPTIONAL BINDING" of optional data type. this is an inbuilt swift method.
     print(text)
-    print(text2)
     
 } else {
     print("myOptional was found to be nil.")

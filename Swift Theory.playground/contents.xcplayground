@@ -29,5 +29,6 @@
         <page name='TypeAlias'/>
         <page name='Naming convetions'/>
         <page name='Extentions'/>
+        <page name='Calculator'/>
     </pages>
 </playground>
