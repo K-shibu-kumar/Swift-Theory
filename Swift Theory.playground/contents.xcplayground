@@ -22,6 +22,7 @@
         <page name='Protocols and Delegates'/>
         <page name='Closures'/>
         <page name='Error Handling'/>
+        <page name='Http Request'/>
         <page name='Json Parsing'/>
         <page name='Design Patterns'/>
         <page name='Advanced SWIFT'/>
@@ -30,5 +31,6 @@
         <page name='Naming convetions'/>
         <page name='Extentions'/>
         <page name='Calculator'/>
+        <page name='CoreLocation'/>
     </pages>
 </playground>

@@ -1,9 +1,10 @@
 // Extension
 
 import Foundation
+import UIKit
 
 /*
- In Swift, extensions provide a way to add new functionality to existing classes, structures, enumerations, or protocols. They allow you to extend the behavior of types without subclassing, which is especially useful when you don't have access to the original source code or when you want to keep your code modular and organised.
+ In Swift, extensions provide a way to add new functionality to existing classes, structures, enumerations, or protocols. They allow you to extend the behaviour of types without subclassing, which is especially useful when you don't have access to the original source code or when you want to keep your code modular and organised.
 
  To define an extension in Swift, you use the extension keyword followed by the name of the type you want to extend. Here's an example that adds a computed property to the Int type:
  
@@ -58,6 +59,8 @@ let numbers = [1, 2, 3, 4, 5]
 print(numbers[safe: 3] ?? 0) // Output: Optional(4)
 print(numbers[safe: 10] ?? 0) // Output: nil
 
+
+
 //extension CustomProtocol {
 //    func customMethod() {
 //        // Implementation goes here
@@ -75,6 +78,72 @@ Extensions in Swift are a powerful tool for enhancing the functionality of exist
 
 
 
-let myDouble = 3.14159
-let myRoundedDouble = String(format: "%.1f", myDouble)
+// Example:- On inbuilt Data types
+
+
+//let myRoundedDouble = String(format: "%.1f", myDouble) //Mark:- Double rounded to String
+
+//print(myDouble.rounded()) //Mark:- here the double is rounded in to Int
+
+//In this particular scenario we can create an Extension to make this feature work
+// Rounding the Double in to x places
+
+extension Double {
+    
+    func round(to places: Int) -> Double {
+        let precisionNumber = pow(10, Double(places))
+        var n = self // every double can now access this extension.
+        n = n * precisionNumber
+        n.round()
+        n = n / precisionNumber
+        return n
+    }
+    
+}
+
+
+var myDouble = 3.14159
+
+//myDouble = myDouble * 1000  // all of this functionality is implemented inside the Extension
+//myDouble.round()
+//myDouble = myDouble / 1000
+
+
+myDouble.round(to: 3)
+
+let anotherDouble = 56.283765
+anotherDouble.round(to: 1)
+
+
+
+
+
+// Example:- First extension , then implementation
+
+
+extension UIButton {
+    func makeCircular() {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = self.frame.size.width / 2
+    }
+}
+//button.layer.cornerRadius = 25  // let's make this feature with extension
+//button.clipsToBounds = true
+
+let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+button.backgroundColor = .red
+button.makeCircular()
+
+
+let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+button1.backgroundColor = .green
+button1.makeCircular() // We can now access the extension we created in to any UIButton
+
+
+
+
+
+// Example :- Protocol Extension
+
+//Refer protocols .Swift
 

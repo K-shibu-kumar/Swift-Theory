@@ -78,29 +78,11 @@ delegate is asking what to do when the return key is pressed
          return false
      }
  
+
+ 
  
  
 6.
- HTTP request:-
- 
- func performRequest (urlString: String) {
-     // 1. Create a URL
-     if let url = URL(string: urlString) {
-         
-         //2. Create a URL session
-         let session = URLSession(configuration: .default)
-         
-         //3. Give the session a Task
-         let task = session.dataTask(with: url, completionHandler: handle(data:response:error:))
-         
-         //4. Start the task
-         task.resume()
-     }
- 
- 
- 
- 
-7.
  If your app has a long running task, such as making network call, run it on a global system queue, or on another background dispatch queue. Alternatively, use asynchronous versions of the call, if available.
  
  DispatchQueue.main.async {
