@@ -1,199 +1,89 @@
 ///# Functions
 
-import Foundation
 
-///# Built in functions
+///*In Swift, a function is a reusable block of code that performs a specific task or calculates a value. Functions are an essential building block of any Swift program and help in organising code, promoting reusability, and making the code more maintainable.
 
-/* In Swift, standard library functions are the built-in functions that can be used directly in our program. For example,
- 
- print() - prints the string inside the quotation marks
- sqrt() - returns the square root of a number
- pow() - returns the power of a number
- These library functions are defined inside the framework. And, to use them we must include the framework inside our program.
- 
- For example, sqrt() and pow() are defined inside the Foundation framework.
- 
- */
+//Here's the basic syntax of defining a function in Swift:
 
-// sqrt computes the square root
-var squareRoot = sqrt(25)
+//func functionName(parameters) -> ReturnType {
+//    // Function body: code that performs the task
+//    // Return a value of ReturnType (if applicable)
+//}
 
-print("Square Root of 25 is",squareRoot)
+///* func: Keyword used to define a function.
+///*functionName: The name of the function. Choose a descriptive name that indicates the purpose of the function.
+///*parameters: A list of input parameters that the function accepts, enclosed in parentheses. Parameters are used to pass data into the function for processing.
+///*ReturnType: The type of value that the function returns. If a function doesn't return a value, use Void (which is an empty tuple, also written as ()).
 
-// pow() comptes the power
-var power = pow(2, 3)
+//Here's an example of a simple function that adds two numbers and returns the result:
 
-print("2 to the power 3 is",power)
-
-/* Benefits of Using Functions
- 1. Code Reusable - We can use the same function multiple times in our program which makes our code reusable. For example,
- 
- 2. Code Readability - Functions help us break our code into chunks to make our program readable and easy to understand.
- 
- */
-func greetings(){
-    print("Hello")
+func addNumbers(_ a: Int, _ b: Int) -> Int {
+    return a + b
 }
-greetings() /*creating a
-             func greetings(){body of the func
-             }
-             Called the function to execute the codes inside
-             greetings()
-             */
 
-/* Body of the func contains a set of codes. First declare the function, then trigger it by calling out the func name whenever we need */
+let result = addNumbers(5, 10)
+print("The result is: \(result)") // Output: The result is: 15
+//In this example:
+
+///*addNumbers is the function name.
+///*_ a: Int, _ b: Int: The function accepts two integer parameters (a and b) and uses external parameter names (_) for a more natural function call.
+///*-> Int: The function returns an integer value (the sum of a and b).Functions can have any number of parameters (including zero), and they can also have default values for parameters to provide flexibility when calling the function.
+
+//Here's an example of a function with a default parameter value:
+
+func greetUser(name: String = "Guest") {
+    print("Hello, \(name)!")
+}
+
+greetUser() // Output: Hello, Guest!
+greetUser(name: "John") // Output: Hello, John!
+
+//In this example, the greetUser function has a default parameter value of "Guest". If no argument is provided, the default value is used.
+
+///*Functions can also be overloaded, meaning you can define multiple functions with the same name but different parameter types or numbers of parameters. Swift will determine which function to call based on the provided arguments.
+
+func multiply(_ a: Int, _ b: Int) -> Int {
+    return a * b
+}
+
+func multiply(_ a: Double, _ b: Double) -> Double {
+    return a * b
+}
+
+//In this example, the multiply function is overloaded to handle both integer and double types.
+
+///*Swift functions are a fundamental concept in programming, and mastering them is essential for writing clean, modular, and maintainable code.
 
 
 
-//Nesting and Scope
+///# Nesting and Scope
 
 
+///*In Swift, functions can be nested within other functions, allowing you to organise code more effectively and encapsulate functionality. When a function is defined within another function, it is called a nested function. The nested function has access to the variables and constants declared in the outer function, as well as the global scope. However, it is only accessible within the scope of the outer function and cannot be called from outside.
 
-/* Creating a func inside another func is called nesting. Each time nesting a new func , trigger the same func. when the original func is triggered the nested func will also get triggered. That is called "scope" */
+//Here's an example of nesting functions in Swift:
 
-func greetings1(){
-    print("Hello")
-    print("World")//body of function can hold many sets of codes to executed later
-    
-    func greetings2(){
-        print("Hello again")
+func outerFunction() {
+    let outerValue = 10
+
+    func innerFunction() {
+        let innerValue = 5
+        print("Inner function: \(innerValue), Outer function: \(outerValue)")
     }
-    
-    greetings2() // can't call out nested func outside the scope.
-}
-greetings1() // the func can be triggered in multiple occasions.
-greetings1()
-greetings1()
 
-
-
-//Functions with Parameter and Argument
-
-
-
-/* input is a variable without value. So declare a value
- Func(nameOfInput: valueOfInput) like declaring a variable
- Func(Parameter: Argument)*/
-
-func greetings3(whoToGreet: String){
-    print("Hello \(whoToGreet)")
-}
-greetings3(whoToGreet:"Dixon")
-/*whoToGreet is the "Parameter" and String is the "Argument" of the Func
- Premature is just like declaring a name in a Variable.
- Argument is like assigning the value*/
-greetings3(whoToGreet: "Noxid")
-/*we can call out the func multiple times ,and assign values to different inputs*/
-
-func divide(n1: Int, n2: Int) {
-    let decimalN1 = Double(n1) // here we took the constant n1's value which can't be reverted, and added converted it to a Double value and assigned it to a new constant decimalN1
-    let decimalN2 = Double(n2)
-    print(decimalN1 / decimalN2)
-}
-divide(n1: 4, n2: 5)/* change an Int to DOuble*/
-
-
-
-//Function with default Argument
-
-
-
-func addNumbers( a: Int = 7,  b: Int = 8) {
-    var sum = a + b
-    print("Sum:", sum)
+    innerFunction()
 }
 
-// function call with two arguments
-addNumbers(a: 2, b: 3)
+outerFunction()
+// Output: Inner function: 5, Outer function: 10
 
-// function call with one argument
-addNumbers(a: 2)
-
-// function call with no arguments
-addNumbers()
+///*In this example, innerFunction() is defined within outerFunction(). The innerFunction() has access to both innerValue and outerValue declared in the outer scope, and it can use them inside its body. However, if you try to call innerFunction() outside of outerFunction(), you'll get an error, as it is not accessible in the global scope:
 
 
+// This will result in an error: 'innerFunction' is not defined
+//#innerFunction()
+///*The scope of a nested function is limited to the scope of the enclosing function. It means you can't define a function inside another function and then call it from outside the enclosing function. This allows you to encapsulate functionality and prevent name conflicts.
 
-//Internal Parameter &
-//External Parameter (also known as Argument Label)
+///*Nested functions are particularly useful when you need to create helper functions that are only relevant within the context of the outer function. It improves code organisation and readability by keeping related functionality together.
 
-
-
-/*In Swift, functions accept values ​​to use with parameters. Parameters are called external and internal.
- 
- Internal Parameter Names are used in the body of the function
- 
- External Parameter Names are used when calling the function
- 
- 
- The naming in the default created function are used as both internal and external names. */
-
-func type1(name: String, lastname: String){
-    print("Welcome \(name) \(lastname)!")
-}
-
-type1(name: "Noxid", lastname: "Here")
-//Another option, we can define Internal and External names differently.
-
-
-/* The value specified externally as CustomerName is set to the variable name; The value specified as CustomerLastName is assigned to the variable lastname. */
-
-func type2(CustomerName name: String, CustomerLastName lastname: String){
-    print("Welcome \(name) \(lastname)!")
-}
-
-type2(CustomerName: "Noxid", CustomerLastName: "Here")
-/* There is a final option, external naming is not used. When calling a function, parameters are written in parentheses in order.
- 
- 
- No name is specified when the function is called. Function also assigns the given parameters respectively to the internal parameters. */
-
-func type3(_ name: String, _ lastname: String){
-    print("Welcome \(name) \(lastname)!")
-}
-
-type3("Noxid", "Here")
-
-
-
-
-//Functions with OUTPUT
-
-
-
-/* Function Return Values
- A function may or may not return value. If we want our function to return some value, we use the return statement and return type. For example, */
-
-func greetings (name : String) -> Bool {
-    if name == "Dixon" || name == "Noxid" {
-        return true
-    } else {
-        return false
-    }
-    
-}
-
-var doorShouldOpen = greetings(name: "Dixon")
-print(doorShouldOpen)
-//In the above example, we have created a function named gretings(). The function checks the name is in the list.
-
-//return true or false
-//The returned value is stored in the doorShouldOpen variable.
-
-
-
-
-// Func as an Input of another func
-
-let array = [6,3,2,8,9,3] // we want to add 1 to each of the items in this array
-
-//Using func as an input:-
-
-func addOne (n1: Int) -> Int { // this func will be the input
-    return n1 + 1
-}
-
-array.map(addOne) // here .map() is a inbuilt func of swift. which takes addOne() method as an input parameter.
-
-print(array.map(addOne))
-
+///*It's essential to understand the concept of scope and how it applies to nested functions to avoid confusion and unintended side effects. The scope determines where variables and functions can be accessed and where they are no longer valid or accessible.
