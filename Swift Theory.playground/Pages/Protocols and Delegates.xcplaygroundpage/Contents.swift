@@ -1,122 +1,51 @@
-// Protocol
+///#  Protocol
+import Foundation
 
-/*
- A protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality.
- 
- Class, Structure or Enumerations can adopt a protocol.
- And using the delegates design a class or struct or enumerations can to talk one another
- 
- 
- */
+///*In Swift, protocols and delegates are powerful concepts used for defining and implementing communication between objects and promoting loose coupling in your code. They play a crucial role in enabling the delegation design pattern, which allows one object (the delegate) to communicate and respond to events or actions from another object.
 
+///# Protocols:
+///*A protocol in Swift is a blueprint for methods, properties, and other requirements that a conforming type (class, struct, or enum) must implement. It defines a set of rules that a type must adhere to without specifying the implementation details. Protocols enable you to define a contract between different components in your application, making it easier to create reusable and interchangeable pieces of code.
 
+//Here's an example of a simple protocol:
 
-//Example:-
+protocol GreetingProtocol {
+    func sayHello()
+}
+///*In this example, we define a protocol GreetingProtocol with a single method requirement sayHello(). Any type that conforms to this protocol must implement the sayHello() method.
 
-protocol CanFly {
-    func fly()
+///# Delegates:
+///*A delegate is an object that conforms to a protocol and is responsible for providing specific functionality or responding to events on behalf of another object. The delegating object holds a weak reference to its delegate, ensuring that there is no strong reference cycle.
+
+//Let's see an example of a delegate pattern using protocols:
+
+protocol GreetingDelegate: AnyObject {
+    func didReceiveGreeting(_ greeting: String)
 }
 
-class Bird {
+class Greeter {
+    weak var delegate: GreetingDelegate?
     
-    var isFemale = true
-    
-    func layEgg() {
-        print("The bird makes a new bird in a shell.")
+    func greet() {
+        let greeting = "Hello, Swift!"
+        delegate?.didReceiveGreeting(greeting)
     }
 }
 
-class Eagle: Bird, CanFly {
-    func soar() {
-        print("The Eagle glides in the air using air current")
-    }
-    func fly() {
-        print("The bird flaps it's wings and lift off in to the sky")
-    }
+class ViewController: GreetingDelegate {
+    let greeter = Greeter()
     
-}
-
-class Penguin: Bird {
-    func swim() {
-        print("The penguin paddles through water.")
-    }
-}
-struct Airplane: CanFly {
-    func fly() {
-        print("The airplane uses it's engine to lift off in to the air")
+    init() {
+        greeter.delegate = self
     }
     
-}
-
-struct FlyingMuseum {
-    func flyingDemo(flyingObject : CanFly){
-        print(flyingObject.fly())
+    func didReceiveGreeting(_ greeting: String) {
+        print("Received greeting: \(greeting)")
     }
 }
 
-var myEagle = Eagle()
-let myPenguin = Penguin()
-let myAirplane = Airplane()
+let viewController = ViewController()
+viewController.greeter.greet() // Output: Received greeting: Hello, Swift!
 
-let museum = FlyingMuseum()
-//museum.flyingDemo(flyingObject: myPenguin) // Penguin did not adopt the CanFly protocol
-museum.flyingDemo(flyingObject: myAirplane)
+///*In this example, we define a protocol GreetingDelegate with a single method requirement didReceiveGreeting(_:). The Greeter class has a delegate property of type GreetingDelegate?, which allows it to call the didReceiveGreeting(_:) method whenever appropriate. The ViewController class conforms to the GreetingDelegate protocol and sets itself as the delegate of the greeter instance. When the greet() method is called on the greeter, it calls the delegate's didReceiveGreeting(_:) method, which prints the received greeting.
 
-
-
-// Delegate
-
-/*
- 
- Protocols are defined in the same file were we use that protocol
- 
- Delegation is a design pattern in Swift that allows one object to delegate some of its responsibilities to another object. This is done by defining a delegate protocol that specifies the methods and properties that the delegate object must implement. The delegating object keeps a reference to the delegate object and sends messages to it at the appropriate time.
- */
-
-
-
-
-// Example for Delegate
-
-
-// Define a delegate protocol
-protocol MyDelegate: AnyObject {
-    func didFinishTask(sender: MyClass)
-}
-
-class MyClass {
-    // Create a delegate property
-    weak var delegate: MyDelegate?
-    
-    func doTask() {
-        // Perform some task...
-        
-        // Notify the delegate that the task is finished
-        delegate?.didFinishTask(sender: self)
-    }
-}
-
-class MyDelegateClass: MyDelegate {
-    func didFinishTask(sender: MyClass) {
-        print("Task finished!")
-    }
-}
-
-let myObject = MyClass()
-let myDelegate = MyDelegateClass()
-myObject.delegate = myDelegate
-myObject.doTask()
-
-
-/*
- In this example, we define a MyDelegate protocol with a single method didFinishTask(sender:). The MyClass class has a delegate property of type MyDelegate? and a doTask() method that performs some task and then notifies the delegate that the task is finished by calling the didFinishTask(sender:) method on the delegate. The MyDelegateClass class adopts the MyDelegate protocol and implements the didFinishTask(sender:) method.
-
- We create instances of MyClass and MyDelegateClass, set the delegate property of myObject to myDelegate, and call the doTask() method on myObject. When the task is finished, the didFinishTask(sender:) method is called on the delegate object, which prints “Task finished!”.
-
- This is just a simple example, but it should give you an idea of how delegation works in Swift.
- 
- */
-
-
-// For Further ref
-// https://jamesrochabrun.medium.com/implementing-delegates-in-swift-step-by-step-d3211cbac3ef
+///*Delegates allow objects to communicate without having to know the specifics of each other's implementation. This promotes a clean and modular design in your codebase, enhancing its maintainability and reusability.
