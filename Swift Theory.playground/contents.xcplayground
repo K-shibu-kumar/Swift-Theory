@@ -19,8 +19,6 @@
         <page name='For..In Loop'/>
         <page name='Functions'/>
         <page name='Functions In-Built'/>
-        <page name='Conversion'/>
-        <page name='In built Swift Func'/>
         <page name='Structures'/>
         <page name='Classes'/>
         <page name='Protocols and Delegates'/>
@@ -28,7 +26,7 @@
         <page name='Error Handling'/>
         <page name='Http Request'/>
         <page name='Json Parsing'/>
-        <page name='Design Patterns'/>
+        <page name='MVC'/>
         <page name='Advanced SWIFT'/>
         <page name='Computed Property'/>
         <page name='TypeAlias'/>
