@@ -10,6 +10,9 @@
         <page name='Optional data Type'/>
         <page name='Randomisation'/>
         <page name='Range Operators'/>
+        <page name='Comparison Operators'/>
+        <page name='Combining Operators'/>
+        <page name='Expressions'/>
         <page name='If Else Statement'/>
         <page name='Guard Statement'/>
         <page name='SWITCH statements'/>

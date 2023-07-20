@@ -1,9 +1,8 @@
+///# Functions
+
 import Foundation
-//Functions
 
-
-
-//built in functions
+///# Built in functions
 
 /* In Swift, standard library functions are the built-in functions that can be used directly in our program. For example,
  
@@ -15,7 +14,7 @@ import Foundation
  For example, sqrt() and pow() are defined inside the Foundation framework.
  
  */
-import Foundation
+
 // sqrt computes the square root
 var squareRoot = sqrt(25)
 
@@ -36,10 +35,10 @@ func greetings(){
     print("Hello")
 }
 greetings() /*creating a
-             func grettings(){body of the func
+             func greetings(){body of the func
              }
              Called the function to execute the codes inside
-             gretings()
+             greetings()
              */
 
 /* Body of the func contains a set of codes. First declare the function, then trigger it by calling out the func name whenever we need */
@@ -72,8 +71,8 @@ greetings1()
 
 
 
-/* input is a variable without value. So decalre a value
- Func(nameOfInput: valueOfInput) like declaring a variale
+/* input is a variable without value. So declare a value
+ Func(nameOfInput: valueOfInput) like declaring a variable
  Func(Parameter: Argument)*/
 
 func greetings3(whoToGreet: String){
@@ -81,13 +80,13 @@ func greetings3(whoToGreet: String){
 }
 greetings3(whoToGreet:"Dixon")
 /*whoToGreet is the "Parameter" and String is the "Argument" of the Func
- Prameter is just like declaring a name in a Variable.
+ Premature is just like declaring a name in a Variable.
  Argument is like assigning the value*/
 greetings3(whoToGreet: "Noxid")
 /*we can call out the func multiple times ,and assign values to different inputs*/
 
 func divide(n1: Int, n2: Int) {
-    let decimalN1 = Double(n1) // here we took the constant n1's value which can't be reverted, and added converted it to a Double value and asigned it to a new constant decimalN1
+    let decimalN1 = Double(n1) // here we took the constant n1's value which can't be reverted, and added converted it to a Double value and assigned it to a new constant decimalN1
     let decimalN2 = Double(n2)
     print(decimalN1 / decimalN2)
 }

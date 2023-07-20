@@ -1,28 +1,74 @@
-// If/ELSE Statement  (conditionals)
+///# If/ELSE Statement  (conditionals)
 
 
-/* using the below 'comparison operators' we can compare the RHS and LHS of a statement
- == is equal to
- != is not equal to
- > is greater than
- < is less than
- >= greater than or equal to
- <= less than or equal to
+///*In Swift, the if-else statement is used for conditional branching. It allows you to execute different blocks of code based on whether a given condition is true or false.
+
+//Here's the basic syntax of the if-else statement in Swift:
+let condition = true
+
+if condition {
+    // Code to be executed if the condition is true
+} else {
+    // Code to be executed if the condition is false
+}
+///*The condition is an expression that evaluates to a Boolean value (true or false). If the condition is true, the code inside the if block will be executed, and if it's false, the code inside the else block will be executed.
+
+//Here are some examples to illustrate how if-else statements work in Swift:
+
+//Example 1 - Checking if a number is positive or negative:
+
+
+let number = -5
+
+if number >= 0 {
+    print("The number is positive or zero.")
+} else {
+    print("The number is negative.")
+}
+
+//Example 2 - Checking if a person is eligible for voting:
+
+
+let age = 18
+
+if age >= 18 {
+    print("You are eligible to vote.")
+} else {
+    print("You are not eligible to vote yet.")
+}
+
+//Example 3 - Checking multiple conditions using else if:
+
+
+let score = 85
+
+if score >= 90 {
+    print("You got an A!")
+} else if score >= 80 {
+    print("You got a B.")
+} else if score >= 70 {
+    print("You got a C.")
+} else {
+    print("You need to improve your score.")
+}
+
+///*You can also use the if statement without an else block if you only need to execute code when a certain condition is met:
+
+let isRaining = true
+
+if isRaining {
+    print("Remember to take an umbrella!")
+}
+///*Remember that the curly braces {} are required around the code blocks associated with if, else, and else if. However, if the block contains only one line of code, you can omit the curly braces:
+
+//if condition
+  //  statement
+//else
+ //   statement
+///*But it's generally considered good practice to include the curly braces for readability and to avoid potential issues with nested statements.
+
  
- the conditions can be combined by the given
- && AND
- || OR
- ! NOT
- 
- Expressions:
- / :- Division
- * :- Multiplication
- + :- Addition
- - :- Substraction
- */
-//Example   if the condition is 'TRUE' then the body of codes is executed. incase False then it checks next condition and so on...
-/* in if statement SWIFT go through each conditions to check and execute the code */
-
+///# Love calculator
 
 func loveCalculator(){
     let LoveScore = Int.random(in: 0...100)

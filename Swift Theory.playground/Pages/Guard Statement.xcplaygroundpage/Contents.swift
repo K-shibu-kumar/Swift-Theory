@@ -1,63 +1,33 @@
-
-// Guard Statement
-
-
-/*
-
-In Swift, we use the guard statement to transfer program control out of scope when certain conditions are not met.
-
-The guard statement is similar to the if statement with one major difference. The if statement runs when a certain condition is met. However, the guard statement runs when a certain condition is not met.
+///# Guard Statement
 
 
-//Syntax of guard Statement
+///*The guard statement in Swift is used to early exit from a function, method, or code block if a condition is not met. It is often used as a counterpart to the if statement, providing a clearer way to handle negative scenarios and reducing nested code blocks.
 
+//The guard statement has the following syntax:
 
-guard expression else {
-  // statements
-  // control statement: return, break, continue or throw.
-}
- 
- Here, expression returns either true or false. If the expression evaluates to
+//let condition = true
+//guard condition else {
+//    // Code to execute if the condition is false
+//    // This block must exit the scope using a return, throw, break, or continue statement.
+//}
 
- true - statements inside the code block of guard are not executed
- false - statements inside the code block of guard are executed
- */
+///*The guard statement checks the specified condition. If the condition is false, the code inside the else block is executed. It is mandatory for the code inside the else block to exit the current scope using one of the following statements: return, throw, break, or continue. This ensures that the flow of the program can't continue further if the condition is not met.
 
+//Here's an example of using guard to validate a function parameter and early exit if the condition is not met:
 
-
-
-//Example: Swift Guard Statement
-var i = 2
-
-while (i <= 10) {
+func processAge(_ age: Int) {
+    guard age >= 0 else {
+        print("Invalid age: age cannot be negative.")
+        return
+    }
     
-  // guard condition to check the even number
-  guard i % 2 == 0 else {
-   
-     i = i + 1
-    continue
-  }
-
-  print(i)
-  i = i + 1
+    // Code to process the valid age
+    print("Age is valid: \(age)")
 }
-/*
- In the above example, we have used the guard statement to check if the number is even or odd. Notice the line,
- 
- guard i % 2 == 0 else {...}
- Here, if i is
- 
- odd - , i % 2== 0 evaluates to false. And, the code inside the guard is executed.
- even - , i % 2 == 0 evaluates to true. And, the code inside the guard is skipped.
- Hence, we only get the even numbers as our output.
- 
- We have used the continue statement inside guard to transfer the control to the next iteration of the loop.
- 
- Note: The use of control statements like continue, break, etc. is compulsory. Otherwise, we will get an error: 'guard' body must not fall through, consider using a 'continue' or 'return' to exit the scope.
- 
- guard Statement Inside a Function
- The guard statement is generally used with functions.
- 
- 
- 
- */
+
+processAge(25) // Output: Age is valid: 25
+processAge(-5) // Output: Invalid age: age cannot be negative.
+
+///*In this example, the processAge(_:) function checks if the age parameter is non-negative using the guard statement. If the age is negative, it prints an error message and exits the function immediately with a return statement. If the age is valid, it proceeds to process the age accordingly.
+
+///*The guard statement is especially useful for reducing nested code blocks and making code more readable, as it separates the error handling logic from the main processing code. It's commonly used in combination with optionals, where you want to handle the case where a value is missing.
