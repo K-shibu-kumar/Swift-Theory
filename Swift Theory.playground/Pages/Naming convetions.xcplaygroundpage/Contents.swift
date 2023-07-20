@@ -1,27 +1,58 @@
-/* In Swift, function parameters can have both an external and an internal name. The external name is used by the caller to pass a value to the parameter, while the internal name is used by the function body to get the parameter value.
- */
-
-//Here’s an example that demonstrates the use of external and internal parameter names in a function:
-
-func greet(_ person: String, with hometown: String) {
-    print("Hello \(person)!  Glad you could visit from \(hometown).")
-}
-greet("Bill", with: "Cupertino")
+///# Naming conventions in Swift
 
 
-// Here we omit the external parameter so we can simply get the input value,
-// with is a Swift english adaptation to make the code more readable
+///*Swift follows a set of naming conventions that are recommended by Apple and widely used by the Swift community. Adhering to these conventions helps make your code more readable, consistent, and in line with the Swift community's best practices.
+
+//Here are some key naming conventions in Swift:
+
+///# CamelCase for Variables, Constants, and Functions:
+//Start with a lowercase letter.
+//Capitalize the first letter of each subsequent word within the name.
+//Do not use underscores or hyphens between words.
+//Example: userName, numberOfItems, calculateTotalAmount()
 
 
-/*
+///# PascalCase for Types (Classes, Structs, Enums, and Protocols):
+//Start with an uppercase letter.
+//Capitalize the first letter of each subsequent word within the name.
+//Do not use underscores or hyphens between words.
+//Example: Person, NetworkManager, CustomProtocol
 
-Swift has several naming conventions that are recommended to follow when writing code. Some of these conventions include:
 
-Striving for clarity at the call site: Names should be clear and descriptive, making it easy to understand what a function or variable represents when reading the code1.
-Prioritising clarity over brevity: While it’s important to keep names concise, clarity should always be the top priority. Avoid using abbreviations or shortening names at the expense of clarity1.
-Using camel case: Swift uses camel case for naming, which means that the first word in a name is lowercase, and the first letter of each subsequent word is uppercase. For example: myVariableName1.
-Using uppercase for types and lowercase for everything else: Types (such as classes, structs, enums, and protocols) should start with an uppercase letter, while all other names (such as variables, constants, and functions) should start with a lowercase letter1.
-Omitting needless words: Names should be concise and to the point. Avoid including unnecessary words that don’t add any additional meaning1.
-These are just a few of the naming conventions used in Swift. It’s important to follow these conventions to make your code clear, readable, and consistent.
+///# All Uppercase for Constants:
+//Use all uppercase letters for constants.
+//Separate words using underscores.
+//Example: let MAX_VALUE = 100, let PI = 3.14159
 
-*/
+
+///# Use Nouns for Types and Functions:
+//Type names (classes, structs, enums) should generally be nouns or noun phrases that represent the entity they describe.
+//Function names should also be descriptive nouns or noun phrases that represent the action they perform.
+
+
+///# Use Verb Phrases for Methods:
+//Method names should generally be verb phrases that represent the action the method performs.
+//Example: func calculateTotal(), func downloadData()
+ 
+
+///# Avoid Abbreviations:
+//Favor clear and descriptive names over abbreviations.
+//Only use abbreviations if they are well-known and widely understood.
+
+
+///# Use Descriptive Names:
+//Choose names that clearly describe the purpose or intent of the variable, constant, function, or type.
+//Avoid single-letter variable names (except for loop counters) and names that don't provide meaningful context.
+
+
+///# Avoid Prefixes:
+//In Swift, prefixes like NS (from Objective-C) are generally not used for types that are native to Swift.
+
+
+///# Use Meaningful Parameter Names:
+//In function signatures, use descriptive parameter names that indicate the purpose of each parameter.
+//Example: func printMessage(_ message: String), func calculateArea(length: Double, width: Double)
+
+
+
+///*By following these naming conventions, you can write more readable and maintainable Swift code, making it easier for you and others to understand and collaborate on your projects.
