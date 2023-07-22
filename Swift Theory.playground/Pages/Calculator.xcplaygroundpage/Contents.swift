@@ -1,4 +1,7 @@
 import Foundation
+
+///# Calculator in progress
+
 struct Calculator {
     private var accumulator: Double = 0.0
     private var operation: String = ""
