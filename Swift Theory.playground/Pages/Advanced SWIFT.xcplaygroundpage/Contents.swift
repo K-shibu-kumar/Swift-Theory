@@ -30,7 +30,7 @@
 3.
  Dark Mode:-
  When changing modes the colour and Background image can be customised
- Custom Colour : By default selecting a system colour or label colour will work just fine. But In order to use a custom colour that automatically respond to system modes, Color picker(Select a colour, drag and drop to square pallet.)
+ Custom Colour : By default selecting a system colour or label colour will work just fine. But In order to use a custom colour that automatically respond to system modes, Colour picker(Select a colour, drag and drop to square pallet.)
  Assets.xcassets - colour - Chose colours for modes - Save the asset colour set
  Custom Background: Drag and drop normal or vector image , make the changes needed. In order to use the dark mode ; Appearance: Select from the dropdown menu.
  
