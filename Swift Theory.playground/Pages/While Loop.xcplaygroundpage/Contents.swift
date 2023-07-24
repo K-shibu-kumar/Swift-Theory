@@ -26,3 +26,17 @@ while counter <= 5 {
 ///*In this example, the while loop continues as long as counter is less than or equal to 5. Inside the loop, we print the value of counter and then increment it by 1 in each iteration.
 
 ///*It's essential to be cautious with the while loop, as it will continue executing indefinitely if the condition never becomes false. If there's a risk of creating an infinite loop, you should make sure to include logic to break out of the loop under certain conditions to avoid unexpected behaviour.
+
+
+
+// Example:
+
+import Foundation
+
+var now = Date().timeIntervalSince1970
+let oneSecFromNow = now + 1
+
+while now < oneSecFromNow {
+    now = Date().timeIntervalSince1970
+    print("Waiting...")
+}
