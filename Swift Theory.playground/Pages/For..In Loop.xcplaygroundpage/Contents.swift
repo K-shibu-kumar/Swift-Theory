@@ -87,3 +87,26 @@ for number in numbers0 where number % 2 == 0 {
 
 ///*The for-in loop provides a concise and expressive way to perform repetitive tasks in Swift, and it is generally preferred over traditional C-style for loops when iterating over collections. It automatically handles the iteration process and avoids the need for explicit index management, making your code safer and less error-prone.
 
+
+
+// Fibonacci
+    
+    func fibonacci(n: Int) {
+        
+        var sequence = [Int]()
+        var a = 0
+        var b = 1
+        
+        for _ in 0..<n {
+            sequence.append(a)
+            let nextNumber = a + b
+            a = b
+            b = nextNumber
+            
+            print(sequence)
+        }
+        
+    }
+let fib: () = fibonacci(n: 90)
+print(fib)
+
