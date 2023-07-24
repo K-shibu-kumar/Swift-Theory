@@ -1,4 +1,5 @@
 ///# Loop
+import Foundation
 
 
 ///*In Swift, the for-in loop is used to iterate over a sequence, such as an array, a range, a dictionary, or a string. It simplifies the process of iterating through each element or key-value pair without the need for traditional index-based looping.
@@ -13,6 +14,12 @@
 
 ///# Iterating over an array:
 
+let animals: Set = ["Dog", "Cat", "Lion", "Camel"]
+
+for animal in animals {
+    print(animal)
+}
+
 let numbers = [1, 2, 3, 4, 5]
 
 for number in numbers {
@@ -22,10 +29,25 @@ for number in numbers {
 
 ///# Iterating over a range:
 
+// Closed open range
 for i in 1...5 {
     print(i)
 }
+// Half open range
+for _ in 1..<5 {
+    print("Now")
+}
 
+// Repeating the string.
+for _ in 1...5 {
+    print("Hello") // whatever code goes here gets executed 
+}
+// Another one
+let word = "pneumonoultramicroscopicsilicovolcanoconiosis"
+
+for letter in word {
+    print(letter)
+}
 
 ///# Iterating over a dictionary:
 
@@ -33,6 +55,13 @@ let fruits = ["apple": 2, "orange": 3, "banana": 1]
 
 for (fruit, quantity) in fruits {
     print("I have \(quantity) \(fruit)s.")
+}
+
+//or
+
+for fruit in fruits {
+    print(fruit.key)
+    print(fruit.value)
 }
 
 
@@ -52,6 +81,7 @@ let numbers0 = [1, 2, 3, 4, 5]
 for number in numbers0 where number % 2 == 0 {
     print("\(number) is even.")
 }
+
 
 ///*In the examples above, the for-in loop iterates over the elements in the numbers array, the values in the range 1...5, the key-value pairs in the fruits dictionary, and the characters in the message string, respectively.
 
