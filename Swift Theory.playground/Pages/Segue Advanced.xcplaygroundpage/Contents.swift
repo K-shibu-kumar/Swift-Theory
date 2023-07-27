@@ -19,3 +19,5 @@ if segue.identifier == "goToResult" {
 
 
 ///* You can control click a 'buttonView' to a VC to make a simple segue View connection. From RootVC , select  Editor - Embed In - Navigation control (for navigation buttons and fullscreen view of each VC)
+
+
