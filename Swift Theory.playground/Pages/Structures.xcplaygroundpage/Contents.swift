@@ -64,7 +64,7 @@ print("Distance between Point A and Point B: \(distance)")
 //Example
 
 struct Town {
-    let name = "Erangel"
+    static let name = "Erangel"
     var citizens = ["Noxid", "Ghost"] // this is a property of the struct
     var resources = ["Medkit": 30, "Painkiller": 60, "Bandaids": 240, "Adrenaline": 55, "Energy drinks": 135]
     
@@ -74,6 +74,7 @@ struct Town {
 }
 //Initialising a Struct
 var myTown = Town()
+print(Town.name)
 // Accessing the struct
 print(myTown.citizens)
 print("\(myTown.citizens[0]) has \(myTown.resources["Bandaids"]!) Bandaids. ")

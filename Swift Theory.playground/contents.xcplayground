@@ -2,10 +2,15 @@
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
         <page name='Data Types '/>
+        <page name='Static '/>
         <page name='Print Statement'/>
         <page name='String'/>
         <page name='Variable &amp; Constants'/>
         <page name='Arrays'/>
+        <page name='For..In Loop'/>
+        <page name='While Loop'/>
+        <page name='Repeat-While Loop'/>
+        <page name='Set'/>
         <page name='Dictionary'/>
         <page name='Optional data Type'/>
         <page name='Randomisation'/>
@@ -16,23 +21,25 @@
         <page name='If Else Statement'/>
         <page name='Guard Statement'/>
         <page name='SWITCH statements'/>
-        <page name='For..In Loop'/>
         <page name='Functions'/>
         <page name='Functions In-Built'/>
+        <page name='Computed Property'/>
         <page name='Structures'/>
         <page name='Classes'/>
-        <page name='Protocols and Delegates'/>
-        <page name='Closures'/>
-        <page name='Error Handling'/>
-        <page name='Http Request'/>
-        <page name='Json Parsing'/>
-        <page name='MVC'/>
-        <page name='Advanced SWIFT'/>
-        <page name='Computed Property'/>
         <page name='TypeAlias'/>
         <page name='Naming convetions'/>
+        <page name='Protocols and Delegates'/>
         <page name='Extentions'/>
+        <page name='Closures'/>
+        <page name='MVC'/>
+        <page name='Error Handling'/>
+        <page name='Contant file'/>
+        <page name='Http Request'/>
+        <page name='Json Parsing'/>
         <page name='Calculator'/>
-        <page name='CoreLocation'/>
+        <page name='Segue Advanced'/>
+        <page name='Advanced SWIFT'/>
+        <page name='3rd Party Dependencies'/>
+        <page name='Some Useful Shortcuts'/>
     </pages>
 </playground>

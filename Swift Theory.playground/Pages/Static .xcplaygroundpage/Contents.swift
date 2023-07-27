@@ -10,39 +10,36 @@
 
 //Example of a static property in a class:
 
-class MathUtils {
-    static let pi = 3.14159
-    static var counter = 0
-
-    static func incrementCounter() {
-        counter += 1
+struct Town {
+    
+    static let name = "Erangel" // this is a static type
+    
+    var citizens = ["Noxid", "Ghost"] // these are global
+    var resources = ["Medkit": 30, "Painkiller": 60, "Bandaids": 240, "Adrenaline": 55, "Energy drinks": 135]
+    
+    func attack(){
+        print("Squad is ready to deploy!")
     }
 }
+//Initialising a Struct
+var myTown = Town()
+// Accessing the struct
+print(myTown.citizens)
+print("\(myTown.citizens[0]) has \(myTown.resources["Bandaids"]!) Bandaids. ")
+// editing the Struct
+myTown.citizens.append("Mad King")
+print(myTown.citizens)
+print(myTown.citizens.count)
+
+
 
 //Usage of the static property:
 
-let circleArea = MathUtils.pi * radius * radius
-MathUtils.incrementCounter()
+print(Town.name)
+//Town.name?.append("New name")// Can't edit the Static constant
+// We don't have to initialise the struct in order use the static value
 
 
-
-///# Global Properties:
-//Global properties are variables or constants that are declared at the root level of a file or module.
-//They are accessible from any part of the code within the same module.
-//Global properties are useful when you want to share values across multiple types or files.
-
-//Example of a global property:
-
-let maximumItemCount = 100
-var appVersion = "1.0"
-
-//Usage of the global property:
-
-if itemCount <= maximumItemCount {
-    // Perform an action
-}
-
-print("App version: \(appVersion)")
 
 
 
