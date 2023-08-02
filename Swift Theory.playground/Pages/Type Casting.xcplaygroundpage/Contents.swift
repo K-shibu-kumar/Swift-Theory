@@ -192,49 +192,7 @@ let squadNSObject: [NSObject] = [NSNum, NSString]
 // Only NS object types are allowed
 
 
-
-///# Any
-
 ///*In Swift, type casting is the process of converting one type of value to another type. The Any, AnyObject, and NSObject are three types commonly used for type casting in Swift. Let's explore each of them:
 
 ///*Any is a type that represents values of any type, including both value types (e.g., Int, String, Bool) and reference types (e.g., classes). It can store any type of value, making it useful when you need to work with mixed types or in cases where the exact type is unknown at compile time.
 
-let anyValue: Any = 42
-if let intValue = anyValue as? Int {
-    print("The value is an Integer: \(intValue)")
-} else {
-    print("The value is not an Integer.")
-}
-
-
-
-///#AnyObject:
-///*AnyObject is a type that represents instances of any class type (i.e., reference types). You can use it when you need to work with objects that could be of different classes but share a common base class.
-
-class MyClass {
-    func myFunction() {
-        print("This is my function.")
-    }
-}
-
-let anyObjectValue: AnyObject = MyClass()
-if let myClassInstance = anyObjectValue as? MyClass {
-    myClassInstance.myFunction()
-} else {
-    print("The value is not an instance of MyClass.")
-}
-
-
-
-///#NSObject:
-///*NSObject is a class in Swift that is the base class for most Objective-C classes. It is often used when working with Objective-C APIs that require interoperability with Swift.
-
-let nsObjectValue: NSObject = NSString(string: "Hello, World!")
-if let stringValue = nsObjectValue as? String {
-    print("The value is a String: \(stringValue)")
-} else {
-    print("The value is not a String.")
-}
-
-
-///*It's essential to use type casting carefully and handle potential type mismatches or unknown types properly. Always prefer strong typing whenever possible, as it provides better compile-time checks and can make your code more robust. Type casting should be used judiciously and when necessary for working with mixed or dynamic types.
