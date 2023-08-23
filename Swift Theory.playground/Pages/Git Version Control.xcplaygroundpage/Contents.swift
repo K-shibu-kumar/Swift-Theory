@@ -1,4 +1,4 @@
-///# Git
+///# Git USing Terminal
 
 ///# Local
 //git init    :- Initialized empty Git Repository
