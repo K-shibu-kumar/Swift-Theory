@@ -41,5 +41,11 @@
         <page name='Advanced SWIFT'/>
         <page name='3rd Party Dependencies'/>
         <page name='Some Useful Shortcuts'/>
+        <page name='SwiftUI'/>
+        <page name='Table View'/>
+        <page name='Type Casting'/>
+        <page name='ViewController LifeCycle'/>
+        <page name='Git Terminal'/>
+        <page name='Git Xcode'/>
     </pages>
 </playground>

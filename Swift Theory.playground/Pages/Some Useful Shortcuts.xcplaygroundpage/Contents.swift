@@ -6,9 +6,16 @@
 // Syntax: navigationController?.popToRootViewController(animated: true)
 
 
+///# Add Navigation Button IB VC
+// Editor-> Embed In-> Navigation Controller
+
+
 ///# Hide back button in VC
 // Syntax: navigationItem.hidesBackButton = true
 
 
 ///# Change or Show a title in VC
 // Syntax: title = "your title"
+
+
+
