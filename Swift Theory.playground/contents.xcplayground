@@ -40,12 +40,11 @@
         <page name='Segue Advanced'/>
         <page name='Advanced SWIFT'/>
         <page name='3rd Party Dependencies'/>
-        <page name='Some Useful Shortcuts'/>
+        <page name='UIKit IBuilder '/>
         <page name='SwiftUI'/>
         <page name='Table View'/>
         <page name='Type Casting'/>
         <page name='ViewController LifeCycle'/>
-        <page name='Git Terminal'/>
-        <page name='Git Xcode'/>
+        <page name='Git Version Control'/>
     </pages>
 </playground>

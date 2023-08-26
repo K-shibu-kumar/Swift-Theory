@@ -8,6 +8,8 @@
 
 ///# Add Navigation Button IB VC
 // Editor-> Embed In-> Navigation Controller
+///* To customise the button  :-
+///select Navigation Control Scene -> Nav Bar-> 
 
 
 ///# Hide back button in VC
