@@ -30,4 +30,12 @@
 // cell.textLabel.text = anArray[indexPath.row]
 
 
+///# TableView Delegate MNethods
 
+// To select and edit a row:-
+
+//override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    print(itemArray[indexPath.row])
+//
+//    tableView.deselectRow(at: indexPath, animated: true)// To remove the animation gary selection 
+//}

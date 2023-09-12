@@ -22,6 +22,7 @@
 //( # Comments , *.txt certain file extensions to be ignored)
                             
 ///# GitClone
+///* GitCLone
 //cd to target dir
 //git clone "URL from GitHub"
 
