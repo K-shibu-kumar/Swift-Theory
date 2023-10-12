@@ -46,5 +46,6 @@
         <page name='Type Casting'/>
         <page name='ViewController LifeCycle'/>
         <page name='Git Version Control'/>
+        <page name='Property Wrapper (SwiftUI)'/>
     </pages>
 </playground>

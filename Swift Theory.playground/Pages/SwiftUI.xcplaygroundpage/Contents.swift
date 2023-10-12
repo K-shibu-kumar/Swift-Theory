@@ -1,39 +1,28 @@
-///# SwiftUI
+///# Ternary Operator
 
-///# @State var
-// In SwiftUI, @State is a property wrapper that allows you to declare a value as a source of truth for a view. When the @State property's value changes, SwiftUI automatically updates the view to reflect the new value. This is a fundamental concept in SwiftUI's reactive programming model.
-///*Here's how you use @State in SwiftUI:
 
-//Declaring a State Property:
+import SwiftUI
+///*The ternary conditional operator (also known as the conditional operator) a ? b : c is used to return one of two values based on a condition. In SwiftUI, you can use the ternary operator to conditionally apply modifiers or display different views based on a condition.
 
-struct ContentView: View {
-    @State private var counter = 0
-    var body: some View {
-        Text("Counter: \(counter)")
-    }
-}
-//In this example, the counter property is declared using @State. Any changes to counter will automatically trigger the view to update.
-
-///* Modifying a State Property:
-//To update a @State property, you typically use a SwiftUI view modifier like .onTapGesture or .button. SwiftUI takes care of updating the view when the state changes.
+//Here's an example of how you might use the ternary operator in SwiftUI:
 
 struct ContentView: View {
-    @State private var counter = 0
-    
+    @State private var isToggled = false
+
     var body: some View {
         VStack {
-            Text("Counter: \(counter)")
-            Button("Increment") {
-                counter += 1
-            }
+            Text("Hello, ")
+            Text(isToggled ? "World!" : "SwiftUI!")
+        }
+        .padding()
+        .background(isToggled ? Color.blue : Color.green)
+        .foregroundColor(isToggled ? Color.white : Color.black)
+        .onTapGesture {
+            self.isToggled.toggle()
         }
     }
 }
 
-///* Accessibility and State:
-//When using @State, SwiftUI ensures that accessibility features like VoiceOver work correctly. The state changes are communicated to accessibility tools, allowing users with disabilities to interact with your app effectively.
+///*In this example, when isToggled is true, it will display "Hello, World!" in blue text with a green background. When isToggled is false, it will display "Hello, SwiftUI!" in black text with a blue background. When tapped, the onTapGesture toggles the value of isToggled.
 
-///* Limitations:
-//@State is designed for use within a single view and its subviews. It's not suitable for sharing data between unrelated views or across view hierarchies.
-//It's also important to note that state properties are tied to the view they belong to. If you need to share data across multiple views, you should consider using higher-level constructs like @ObservedObject, @Binding, @EnvironmentObject, or a dedicated data store.
-//Remember that @State is just one piece of SwiftUI's reactive programming model. SwiftUI handles the complexity of observing changes and updating the UI accordingly, making your code more concise and easier to understand.
+///*Remember that the ternary operator is just one way to conditionally modify or display views in SwiftUI. Depending on your specific use case, you might also use if statements or switch statements to control the flow of your UI.
