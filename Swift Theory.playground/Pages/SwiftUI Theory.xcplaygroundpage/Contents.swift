@@ -41,7 +41,7 @@ let num2 = 20
 
 let absNum1 = abs(num1) // absNum1 will be 10
 let absNum2 = abs(num2) // absNum2 will be 20
-In the example above, abs() is used to find the absolute values of num1 and num2. The result is that absNum1 is 10 and absNum2 is 20.
+//In the example above, abs() is used to find the absolute values of num1 and num2. The result is that absNum1 is 10 and absNum2 is 20.
 
 ///*Regarding "conditional" in your question, if you want to conditionally take the absolute value based on a condition, you can use a ternary conditional operator:
 
